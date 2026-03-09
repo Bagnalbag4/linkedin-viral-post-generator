@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LinkedIn Viral Tech Post Studio</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>LinkedIn Viral Tech Post Studio</h1>
+      <p class="subtitle">Generate high-engagement, human-sounding LinkedIn posts from live tech trends.</p>
+
+      <section class="card">
+        <label>Topic</label>
+        <select id="topic">
+          {% for topic in topics %}
+          <option value="{{topic}}">{{topic}}</option>
+          {% endfor %}
+        </select>
+
+        <label>Audience</label>
+        <input id="audience" value="LinkedIn professionals, founders, and builders" />
+
+        <label>Tone</label>
+        <input id="tone" value="Founder-level, conversational, confident" />
+
+        <button id="generate">Generate Viral Post</button>
+      </section>
+
+      <section class="card">
+        <h2>Generated LinkedIn Post</h2>
+        <pre id="post">Click "Generate Viral Post" to start...</pre>
+      </section>
+
+      <section class="card">
+        <h2>Image Prompt JSON</h2>
+        <pre id="imagePrompt">{}</pre>
+      </section>
+
+      <section class="card">
+        <h2>Live Trend Inputs</h2>
+        <ul id="trends"></ul>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
